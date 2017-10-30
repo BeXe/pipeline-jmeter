@@ -1,4 +1,5 @@
 node {
   stage 'Run JMeter Test'
-  sh '/home/ubuntu/apache-jmeter-3.1/bin/jmeter.sh -n -t /home/ubuntu/Jenkins_demo1.jmx -l test.jtl'
+  sh '/var/jenkins_home/data/apache-jmeter-3.2/bin/jmeter.sh -Jjmeter.save.saveservice.output_format=xml -n -t /var/jenkins_home/data/jmx/studiolotus-nl.jmx -l Test.jtl'
+  
 }
