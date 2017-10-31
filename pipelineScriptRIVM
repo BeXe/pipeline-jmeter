@@ -2,15 +2,15 @@ node {
   stage ('Run JMeter Test') {
   sh '/opt/apache-jmeter-3.2/bin/jmeter.sh -Jjmeter.save.saveservice.output_format=xml -n -t /opt/loadtest/demo.sdv.rivm.nl/samenmeten.jmx -l samenmeten.jtl'
   }
-   stage('Deploy approval'){
+ /*  stage('Deploy approval'){
     input "Deploy to prod?"
 }
-}
+}*/
 node {
   stage ('Publish Artifacts'){
   step([$class: 'ArtifactArchiver', artifacts: '**/*.jtl'])
   }
   stage ('Test Finished'){
-  echo 'Test Finished' 	
+  performanceReport parsers: [[$class: 'JMeterParser', glob: 'result.xml']], relativeFailedThresholdNegative: 1.2, relativeFailedThresholdPositive: 1.89, relativeUnstableThresholdNegative: 1.8, relativeUnstableThresholdPositive: 1.5
  }
  }
