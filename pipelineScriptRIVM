@@ -1,4 +1,4 @@
 node {
   stage 'Run JMeter Test'
-  sh /opt/apache-jmeter-3.2/bin/jmeter.sh -Jjmeter.save.saveservice.output_format=xml -n -t /opt/loadtest/demo.sdv.rivm.nl/demo.sdv.rivm.nl.jmx -l demo.sdv.rivm2.jtl
+  sh '/opt/apache-jmeter-3.2/bin/jmeter.sh -Jjmeter.save.saveservice.output_format=xml -n -t /opt/loadtest/demo.sdv.rivm.nl/demo.sdv.rivm.nl.jmx -l demo.sdv.rivm2.jtl'
   }
