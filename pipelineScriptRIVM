@@ -4,8 +4,8 @@ node {
   }
  /*  stage('Deploy approval'){
     input "Deploy to prod?"
-}
 }*/
+}
 node {
   stage ('Publish Artifacts'){
   step([$class: 'ArtifactArchiver', artifacts: '**/*.jtl'])
