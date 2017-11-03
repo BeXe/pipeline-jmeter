@@ -6,12 +6,12 @@ node {
   
    // Running Jmeter Test 5 users
   stage ('Run JMeter Test 5 Users') {
-  sh '/opt/apache-jmeter-3.2/bin/jmeter.sh -n -t /opt/loadtest/demo.sdv.rivm.nl/samenmeten.jmx -jusers=5 -l samenmeten.jtl'
+  sh '/opt/apache-jmeter-3.2/bin/jmeter.sh -n -t /opt/loadtest/demo.sdv.rivm.nl/samenmeten.jmx -JUSERS=5 -l samenmeten.jtl'
   }
   
    // Running Jmeter Test 10 users
   stage ('Run JMeter Test 10 users') {
-  sh '/opt/apache-jmeter-3.2/bin/jmeter.sh -n -t /opt/loadtest/demo.sdv.rivm.nl/samenmeten.jmx -jusers=10 -l samenmeten.jtl'
+  sh '/opt/apache-jmeter-3.2/bin/jmeter.sh -n -t /opt/loadtest/demo.sdv.rivm.nl/samenmeten.jmx -JUSERS=10 -l samenmeten.jtl'
   }
   
   //Publishing Artifacts
